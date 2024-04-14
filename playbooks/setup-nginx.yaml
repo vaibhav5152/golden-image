@@ -1,0 +1,25 @@
+---
+- name: Setup reverse proxy using nginx
+  hosts: all
+  become: true
+  gather_facts: False
+
+  vars:
+    service_name: nginx
+
+  tasks:
+    - name: Install nginx
+      apt:
+        name: "{{ service_name }}"
+        state: present
+
+    - name: Enable nginx
+      service:
+        name: nginx
+        enabled: yes
+
+    - name: Start nginx
+      service:
+        name: nginx 
+        state: started
+
