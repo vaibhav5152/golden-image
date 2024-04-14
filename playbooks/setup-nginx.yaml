@@ -1,6 +1,6 @@
 ---
 - name: Setup reverse proxy using nginx
-  hosts: all
+  hosts: 43.205.143.93
   become: true
   gather_facts: False
 
